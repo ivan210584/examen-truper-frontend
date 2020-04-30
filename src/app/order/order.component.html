@@ -1,0 +1,39 @@
+<div class="text-center">
+    <h2>
+        Captura de pedido
+    </h2>
+</div>
+<p>
+    Producto:
+
+    <select name="miselect2" [(ngModel)]="seleccionado">
+        <option [ngValue]="item" *ngFor="let item of productos">{{item.nombre}}</option>
+    </select>
+
+    <br><br>SKU: {{seleccionado?.sku}}
+    <br>Precio unitario: {{seleccionado?.price}}
+    <br>Cantidad: <input name="name" type="number" [(ngModel)]="amout" />
+    <br>Total: {{seleccionado && amout ? '$' + (seleccionado?.price * amout) : ''}}
+    <br><button (click)="agregarDetallePedido()">Agregar!</button>
+
+</p>
+
+<table>
+    <tr>
+        <th *ngFor="let column of headers">
+            {{column}}
+        </th>
+    </tr>
+    <tr *ngFor="let prod of productosPedido">
+        <td>{{prod.sku}}</td>
+        <td>{{prod.producto}}</td>
+        <td>{{prod.cantidad}}</td>
+        <td>{{prod.precioUnitario}}</td>
+        <td>{{prod.total}}</td>
+    </tr>
+</table>
+
+<br><h2>Gran Total: {{granTotal}}</h2>
+
+
+<br><button (click)="agregarPedido()">Guardar Pedido</button>

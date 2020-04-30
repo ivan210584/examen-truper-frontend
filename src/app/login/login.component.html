@@ -1,0 +1,17 @@
+<h3>Login</h3>
+<div>
+  <div class="spacer">
+    <label for="Usuario">Usuario</label>
+    <input type="text" placeholder="Usuario" [(ngModel)]="usuario">
+  </div>
+  <div class="spacer">
+    <label for="password">Password</label>
+    <input type="password" placeholder="password" [(ngModel)]="password" class="form-control" />
+  </div>
+  <p style="color: red;">
+    {{authService.errorLogIn ? 'Nombre de usuario y/o contraseña inválidos' : ''}}
+  </p>
+  <div class="spacer">
+    <button type="submit" (click)="Login()">Login</button>
+  </div>
+</div>

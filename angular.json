@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "examentruper"
+    }
+  },
+  "defaultProject": "examentruper",
+  "cli": {
+    "analytics": "fc1955ba-472d-4659-be44-957a181568d6"
+  }
 }
