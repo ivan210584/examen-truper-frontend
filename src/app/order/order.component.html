@@ -1,24 +1,29 @@
-<div class="text-center">
+<div>
     <h2>
-        Captura de pedido
+        CAPTURA DE PEDIDO
     </h2>
 </div>
 <p>
-    Producto:
+    Seleccione un producto:
 
     <select name="miselect2" [(ngModel)]="seleccionado">
         <option [ngValue]="item" *ngFor="let item of productos">{{item.nombre}}</option>
     </select>
 
-    <br><br>SKU: {{seleccionado?.sku}}
-    <br>Precio unitario: {{seleccionado?.price}}
-    <br>Cantidad: <input name="name" type="number" [(ngModel)]="amout" />
-    <br>Total: {{seleccionado && amout ? '$' + (seleccionado?.price * amout) : ''}}
-    <br><button (click)="agregarDetallePedido()">Agregar!</button>
-
+    <br>Introduzca la cantidad: <input name="name" type="number" [(ngModel)]="amout" />
 </p>
+<table id="orders2">
+    <tr>
+        <td>SKU: {{seleccionado?.sku}}</td>
+        <td>Precio unitario: {{seleccionado?.price ? '$' + seleccionado?.price : ''}}</td>
+        <td>Total: {{seleccionado && amout ? '$' + (seleccionado?.price * amout) : ''}}</td>
+        <td><button (click)="agregarDetallePedido()">Agregar Producto</button></td>
+    </tr>
+</table>
 
-<table>
+<br><br>
+
+<table id="orders">
     <tr>
         <th *ngFor="let column of headers">
             {{column}}
@@ -30,12 +35,12 @@
         <td>{{prod.cantidad}}</td>
         <td>{{prod.precioUnitario}}</td>
         <td>{{prod.total}}</td>
-        <td><button (click)="quitarProductoDelPedido(prod)">Quitar</button></td>
+        <td><button class="botonRojo" (click)="quitarProductoDelPedido(prod)">Quitar</button></td>
     </tr>
 </table>
 
 <br>
-<h2>Gran Total: {{granTotal}}</h2>
+<h2>GRAN TOTAL: {{granTotal ? '$' + granTotal : ''}}</h2>
 
 
 <br><button (click)="agregarPedido()">Guardar Pedido</button>

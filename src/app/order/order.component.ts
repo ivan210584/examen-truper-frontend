@@ -19,7 +19,7 @@ export class OrderComponent implements OnInit {
   detalleProductoSel: DetalleProducto;
   //productosPedido: DetalleProducto[];
   productosPedido: Array<DetalleProducto> = [];
-  headers = ["SKU", "PRODUCTO", "CANTIDAD", "PRECIO U.", "TOTAL", "QUITAR"];
+  headers = ["SKU", "PRODUCTO", "CANTIDAD", "PRECIO UNITARIO", "TOTAL", ""];
   granTotal: number;
   pedidoCreado: boolean = false;
   staticAlertClosed = false;
