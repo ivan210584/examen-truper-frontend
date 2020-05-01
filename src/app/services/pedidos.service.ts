@@ -15,9 +15,13 @@ export class PedidosService {
   constructor(private http: HttpClient) { }
 
   generarPedido(detallePedido: DetallePedido) {
-    this.http.post(this.uri + '/pedidos/agregar', detallePedido )
+    this.http.post(this.uri + '/pedidos/agregar', detallePedido)
       .subscribe((resp: any) => {
         console.log(resp);
       });
+  }
+
+  generarPedido2(detallePedido: DetallePedido) {
+    return this.http.post(this.uri + '/pedidos/agregar', detallePedido);
   }
 }

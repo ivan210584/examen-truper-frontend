@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductosService } from './services/productos.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { PedidosService } from './services/pedidos.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PedidosService } from './services/pedidos.service';
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'order', component: OrderComponent }
-    ])
+    ]),
+    NgbModule
   ],
   providers: [ProductosService, PedidosService, {
     provide: HTTP_INTERCEPTORS,

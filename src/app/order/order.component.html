@@ -30,10 +30,16 @@
         <td>{{prod.cantidad}}</td>
         <td>{{prod.precioUnitario}}</td>
         <td>{{prod.total}}</td>
+        <td><button (click)="quitarProductoDelPedido(prod)">Quitar</button></td>
     </tr>
 </table>
 
-<br><h2>Gran Total: {{granTotal}}</h2>
+<br>
+<h2>Gran Total: {{granTotal}}</h2>
 
 
 <br><button (click)="agregarPedido()">Guardar Pedido</button>
+
+<p style="color: green;">
+    {{pedidoCreado ? 'Pedido creado correctamente, ya puede capturar un nuevo pedido.' : ''}}
+</p>
